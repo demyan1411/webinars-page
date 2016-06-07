@@ -1,19 +1,91 @@
 @import "normalize.css/normalize.css";
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+button {
+	outline: none;
+	border: none;
+	background: none;
+}
+
+img {
+	display: block;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+address {
+	font-style: normal;
+}
+
+input,
+textarea {
+	outline: none;
+	border: none;
+	background: none;
+	padding: 0;
+	margin: 0;
+}
+
 html,
 body {
-  width: 100%;
-  height: 100%;
+	height:100%;
+	width: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+  color: #fff;
+  font-family: 'pf_agora_slab_proregular';
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 #root {
   width: 100%;
   height: 100%;
   background: #00a8ec;
+	
+	// & > div,
+	// & > div > div {
+	// 	height: 100%;
+	// }
 
   .wrapper {
     max-width: 1770px;
     margin: 0 auto;
     position: relative;
+    height: 100%;
+    padding: 0 20px;
   }
+}
+
+.main {
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+
+	&__content {
+		color: #fff;
+		width: 100%;
+		height: 100%;
+		padding-bottom: 150px;
+		
+		& > div {
+			height: 100%;
+			position: relative;
+		}
+	}
 }

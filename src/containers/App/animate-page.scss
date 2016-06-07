@@ -1,0 +1,35 @@
+.forward-enter {
+  left: 150% !important;
+}
+
+.forward-enter.forward-enter-active {
+  left: 50% !important;
+  transition: left .8s linear;
+}
+
+.forward-leave {
+  left: 50%;
+}
+
+.forward-leave.forward-leave-active {
+  left: -150%;
+  transition: left .8s linear;
+}
+
+.back-enter {
+  left: -150% !important;
+}
+
+.back-enter.back-enter-active {
+  left: 50% !important;
+  transition: left .8s linear;
+}
+
+.back-leave {
+  left: 50%;
+}
+
+.back-leave.back-leave-active {
+  left: 150%;
+  transition: left .8s linear;
+}

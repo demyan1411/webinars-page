@@ -1,0 +1,43 @@
+.menu {
+  width: 100%;
+  display: block;
+  
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid #fff;
+  }
+  
+  &__item {
+    &::after {
+      content: '';
+      width: 1px;
+      height: 10px;
+      background: #fff;
+      margin: 15px auto 0;
+      display: block;
+    }
+  }
+  
+  &__link {
+    position: relative;
+    
+    &::before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      border-left: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      position: absolute;
+      left: 50%;
+      top: -25px;
+      transform: translateX(-50%) rotate(-45deg);
+      display: none;
+    }
+    
+    &:hover::before {
+      display: block;
+    }
+  }
+}
