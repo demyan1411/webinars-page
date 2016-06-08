@@ -1,0 +1,2 @@
+export const RENDER_WEBINARS = 'RENDER_WEBINARS'
+export const SET_WEBINAR_URL = 'SET_WEBINAR_URL'

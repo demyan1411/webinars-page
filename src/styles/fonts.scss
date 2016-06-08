@@ -21,3 +21,27 @@
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'pf_agora_slab_prolight';
+    src: url('../fonts/pfagoraslabpro-light-webfont.eot');
+    src: url('../fonts/pfagoraslabpro-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pfagoraslabpro-light-webfont.woff') format('woff'),
+         url('../fonts/pfagoraslabpro-light-webfont.ttf') format('truetype'),
+         url('../fonts/pfagoraslabpro-light-webfont.svg#pf_agora_slab_prolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pf_agora_slab_prothin';
+    src: url('../fonts/pfagoraslabpro-thin-webfont.eot');
+    src: url('../fonts/pfagoraslabpro-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pfagoraslabpro-thin-webfont.woff') format('woff'),
+         url('../fonts/pfagoraslabpro-thin-webfont.ttf') format('truetype'),
+         url('../fonts/pfagoraslabpro-thin-webfont.svg#pf_agora_slab_prothin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

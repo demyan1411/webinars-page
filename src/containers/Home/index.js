@@ -1,9 +1,24 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 
-import './styles.scss'
+import './home.scss'
 
 export default class Home extends Component {
+  
+  componentDidMount() {
+      document.body.addEventListener('wheel', this.handleScroll)
+  }
+  
+  componentWillUnmount() {
+    document.body.removeEventListener('wheel', this.handleScroll)
+  }
+  
+  handleScroll(e) {
+    if (e.deltaY > 0) {
+      browserHistory.push('/webinar')
+    }
+  }
   
   render() {
     const webcam = require('./images/webcam.png');
@@ -12,11 +27,13 @@ export default class Home extends Component {
     
     return (
       <div className='home'>
-        <Link to='/webinar'>webinar</Link>
-        <img src={webcam} alt='webcam' className='home__img home__img--webcam' />
-        <img src={logo} alt='logo' className='home__img home__img--logo' />
-        <div className='home__text'>by BoomStarter</div>
-        <img src={mouse} alt='mouse' className='home__img home__img--mouse' />
+        <div className='home__content'>
+          <Link to='/webinar'>webinar</Link>
+          <img src={webcam} alt='webcam' className='home__img home__img--webcam' />
+          <img src={logo} alt='logo' className='home__img home__img--logo' />
+          <div className='home__text'>by BoomStarter</div>
+          <img src={mouse} alt='mouse' className='home__img home__img--mouse' />
+        </div>
       </div>
     )
   }

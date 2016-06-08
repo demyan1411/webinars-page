@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
-import { Form } from '../../components'
+import { Form } from '../../components';
 
-import { webinars } from '../../webinars.js'
-
-import './webinar.scss'
-// console.log(webinars)
-
-export default class Webinar extends Component {
-
+export default class Webinar2 extends Component {
+  
   render() {
     return (
       <div className='webinar'>
@@ -15,22 +10,18 @@ export default class Webinar extends Component {
         
           <div className='person'>
             <div className='person__content'>
-              <div className='person__text'>Спикер</div>
+              <div className='person__text'>Спикерwerwerwer</div>
               <div className='person__name'>Евгений Веранчик</div>
               <div className='person__text'>Руководитель отдела развития “Boomstarter”</div>
             </div>
           </div>
         
           <div className='webinar__title'>
-            22 июня 2016, 14:00
-            Краудфандинг “Введение”
+             QWE QWE QWE
           </div>
           
           <div className='webinar__text'>
-            Пройдите бесплатный обучающий онлайн-курс “Мастер краудфандинга”
-            Курс состоит из 35 видеоуроков длительностью 3-7 минут. Видеокурс будет особенно полезен
-            тем, кто хочет стать гуру краудфандинга и успешно привлекать деньги на реализацию
-            своей идеи.
+            lorem lorem lorem lorem  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem   lorem lorem  vlorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem  vlorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
           </div>
           
           <div className='webinar__text webinar__text--no-margin'>Пройдя онлайн-курс “Мастер краудфандинга” вы узнаете:</div>
