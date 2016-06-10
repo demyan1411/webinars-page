@@ -6,15 +6,21 @@
   
   &__bottom {
     padding-top: 40px;
+  }
+  
+  &__list {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
   
   &__item {
-    display: inline-block;
-    vertical-align: top;
     margin-right: 20px;
+    
+    &:last-child {
+      margin-left: auto;
+    }
   }
   
   &__link {
@@ -28,8 +34,5 @@
       text-decoration: underline;
     }
   }
-  
-  &__legal {
-    
-  }
+
 }

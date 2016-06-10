@@ -1,57 +1,61 @@
-import React, { Component } from 'react'
-import { Form } from '../../components'
+import React, { PropTypes, Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { WebinarView } from '../../components'
+import * as webinarActions from '../../actions/WebinarActions'
+import { find } from 'lodash'
+import { webinarsArray } from './webinars.js'
 
-import { webinars } from '../../webinars.js'
 
-import './webinar.scss'
-// console.log(webinars)
+const mapStateToProps = (state) => {
+  return {
+    webinar: state.webinar
+  }
+}
 
-export default class Webinar extends Component {
+const mapDispatchToProps = (dispatch) => {
+  return {
+    webinarActions: bindActionCreators(webinarActions, dispatch)
+  }
+}
+
+let webinarsNameArray = ['']
+
+class Webinar extends Component {
+  
+  componentWillMount() {
+    this.addNameToWebinarsNameArray()
+
+    const { getCurrentWebinar, getPreviousWebinar } = this.props.webinarActions
+    const previousWebinarName = webinarsNameArray[0]
+    const currentWebinarName = webinarsNameArray[1]
+    
+    getPreviousWebinar(this.getWebinarObject(previousWebinarName))
+    getCurrentWebinar(this.getWebinarObject(currentWebinarName))
+  }
+  
+  addNameToWebinarsNameArray() {
+    webinarsNameArray.push(this.props.params.webinar)
+    if (webinarsNameArray.length > 2) webinarsNameArray.shift()
+  }
+  
+  getWebinarObject(webinarName) {
+    return find(webinarsArray, {name: webinarName})
+  }
 
   render() {
+    const { currentWebinar, previousWebinar } = this.props.webinar
+    let previousWebinarView = ''
+    if (previousWebinar) previousWebinarView = (<WebinarView webinar={previousWebinar} class={'webinars__previous'} />)
+    
     return (
-      <div className='webinar'>
-        <div className='webinar__content'>
-        
-          <div className='person'>
-            <div className='person__content'>
-              <div className='person__text'>Спикер</div>
-              <div className='person__name'>Евгений Веранчик</div>
-              <div className='person__text'>Руководитель отдела развития “Boomstarter”</div>
-            </div>
-          </div>
-        
-          <div className='webinar__title'>
-            22 июня 2016, 14:00
-            Краудфандинг “Введение”
-          </div>
-          
-          <div className='webinar__text'>
-            Пройдите бесплатный обучающий онлайн-курс “Мастер краудфандинга”
-            Курс состоит из 35 видеоуроков длительностью 3-7 минут. Видеокурс будет особенно полезен
-            тем, кто хочет стать гуру краудфандинга и успешно привлекать деньги на реализацию
-            своей идеи.
-          </div>
-          
-          <div className='webinar__text webinar__text--no-margin'>Пройдя онлайн-курс “Мастер краудфандинга” вы узнаете:</div>
-          <ol className='webinar__list'>
-            <li className='webinar__item'>
-              что такое краудфандинг и как это работает;
-              как качественно оформить проект: снять видео,
-            </li>
-            <li className='webinar__item'>
-              написать текст, сделать инфографику
-              и подобрать вознаграждения;
-            </li>
-            <li className='webinar__item'>
-              как правильно продвигать проект в массы,
-              как сделать его популярным и узнаваемым.
-            </li>
-          </ol>
-          
-          <Form />
-        </div>
+      <div className='webinars'>
+        {previousWebinarView}
+        <WebinarView webinar={currentWebinar} class={'webinars__current'} />
       </div>
     )
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Webinar)
+

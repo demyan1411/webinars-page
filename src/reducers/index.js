@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import webinars from './webinars'
+import webinar from './webinar'
 
 export const rootReducer = combineReducers({
-  webinars
+  webinar
 })

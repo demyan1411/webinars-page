@@ -18,6 +18,6 @@ export default function configureStore() {
       store.replaceReducer(nextRootReducer)
     });
   }
-
+  
   return store
 }

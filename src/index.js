@@ -11,8 +11,6 @@ import './styles/default.scss'
 
 const store = configureStore()
 
-// console.log(store);
-
 render(
   <Provider store={store}>
     <Router history={browserHistory} routes={routes} />

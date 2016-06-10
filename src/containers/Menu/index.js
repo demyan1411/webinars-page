@@ -4,13 +4,14 @@ import { Link } from 'react-router'
 import './menu.scss'
 
 export default class Menu extends Component {
+  
   render() {
     return (
       <nav className='menu'>
         <ul className='menu__list'>
         
           <li className='menu__item'>
-            <Link to='/webinar' className='menu__link' activeClassName='active'>
+            <Link to='/webinar' className='menu__link' activeClassName='active' params={{'qwe':"qweqweqwe"}}>
               <div className='menu__link-date'>
                 15 июня 2016
               </div>

@@ -1,28 +1,32 @@
-import React, { Component } from 'react'
-import { Form } from '../../components';
+import React, { PropTypes, Component } from 'react'
+import { Form } from '../../components'
 
-export default class Webinar2 extends Component {
+import './webinar.scss'
+
+export default class WebinarView extends Component {
   
   render() {
+    
+    const { date, title, text } = this.props.webinar
+    const webinarClass = this.props.class
+
     return (
-      <div className='webinar'>
+      <div className={webinarClass}>
         <div className='webinar__content'>
         
           <div className='person'>
             <div className='person__content'>
-              <div className='person__text'>Спикерwerwerwer</div>
+              <div className='person__text'>Спикер</div>
               <div className='person__name'>Евгений Веранчик</div>
               <div className='person__text'>Руководитель отдела развития “Boomstarter”</div>
             </div>
           </div>
         
-          <div className='webinar__title'>
-             QWE QWE QWE
-          </div>
+          <div></div>
           
-          <div className='webinar__text'>
-            lorem lorem lorem lorem  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem   lorem lorem  vlorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem  vlorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-          </div>
+          <div className='webinar__title'>{title}</div>
+          
+          <div className='webinar__text'>{text}</div>
           
           <div className='webinar__text webinar__text--no-margin'>Пройдя онлайн-курс “Мастер краудфандинга” вы узнаете:</div>
           <ol className='webinar__list'>

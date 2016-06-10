@@ -18,8 +18,8 @@ export default class Footer extends Component {
               <li className='footer__item'><a href='' className='footer__link'>Контакты</a></li>
               <li className='footer__item'><a href='' className='footer__link'>Блог</a></li>
               <li className='footer__item'><a href='' className='footer__link'>Команда</a></li>
+              <li className='footer__item'>© 2012-2016 Boomstarter — ООО «Краудфандинг»</li>
             </ul>
-            <div className='footer__legal'>© 2012-2016 Boomstarter — ООО «Краудфандинг»</div>
           </div>
         </div>
       </footer>

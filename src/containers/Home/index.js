@@ -28,7 +28,6 @@ export default class Home extends Component {
     return (
       <div className='home'>
         <div className='home__content'>
-          <Link to='/webinar'>webinar</Link>
           <img src={webcam} alt='webcam' className='home__img home__img--webcam' />
           <img src={logo} alt='logo' className='home__img home__img--logo' />
           <div className='home__text'>by BoomStarter</div>
